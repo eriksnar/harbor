@@ -25,6 +25,7 @@ def prepare_docker_compose(configs, with_clair, with_trivy, with_notary, with_ch
         'log_location': configs['log_location'],
         'protocol': configs['protocol'],
         'http_port': configs['http_port'],
+        'core_custom_ca_bundle_path': configs['core_custom_ca_bundle_path'],
         'external_redis': configs['external_redis'],
         'external_database': configs['external_database'],
         'with_notary': with_notary,
