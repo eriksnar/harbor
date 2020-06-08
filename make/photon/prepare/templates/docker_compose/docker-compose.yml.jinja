@@ -563,6 +563,11 @@ services:
       - type: bind
         source: ./common/config/shared/trust-certificates
         target: /harbor_cust_cert
+{% if trivy_custom_ca_bundle_path %}
+      - type: bind
+        source: {{trivy_custom_ca_bundle_path}}
+        target: /etc/ssl/certs/ca-certificates.crt
+{% endif %}
 {% if internal_tls.enabled %}
       - type: bind
         source: {{internal_tls.trivy_adapter_crt_path}}

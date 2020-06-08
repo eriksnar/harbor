@@ -371,6 +371,11 @@ def parse_yaml_config(config_file_path, with_notary, with_clair, with_trivy, wit
     core_config = configs.get('core') or {}
     config_dict['core_custom_ca_bundle_path'] = core_config.get('ca_bundle') or ''
     
+    # Trivy configs
+    trivy_config = configs.get('trivy') or {}
+    config_dict['trivy_custom_ca_bundle_path'] = trivy_config.get('ca_bundle') or ''
+    
+
     return config_dict
 
 
